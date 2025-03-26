@@ -1,0 +1,2629 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Service Distributor Dashboard API Documentation",
+        "version": "1.0.0",
+        "description": "This is a REST API.",
+        "contact": {
+            "name": "",
+            "email": ""
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/api/v1",
+            "description": "Development Server"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "api_key": {
+                "type": "apiKey",
+                "name": "x-auth-token",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Users"
+        },
+        {
+            "name": "Auth"
+        },
+        {
+            "name": "Distributor"
+        },
+        {
+            "name": "Agreements"
+        },
+        {
+            "name": "CallSchedule"
+        },
+        {
+            "name": "Orders"
+        },
+        {
+            "name": "Payments"
+        },
+        {
+            "name": "Support"
+        },
+        {
+            "name": "Projects"
+        },
+        {
+            "name": "Request"
+        },
+        {
+            "name": "Documents"
+        },
+        {
+            "name": "AuthToken"
+        },
+        {
+            "name": "AuthHistory"
+        },
+        {
+            "name": "ApiLogs"
+        },
+        {
+            "name": "Client"
+        },
+        {
+            "name": "Product"
+        },
+        {
+            "name": "Category"
+        },
+        {
+            "name": "UserInfo"
+        },
+        {
+            "name": "CountryCurrency"
+        },
+        {
+            "name": "ProductPrice"
+        }
+    ],
+    "paths": {
+        "/user": {
+            "get": {
+                "tags": ["Users"],
+                "summary": "Get - Users",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": ["Users"],
+                "summary": "Create - User",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "userName": "Alala",
+                                    "role": "distributor",
+                                    "email": "Alala@gmail.com",
+                                    "password": "August@1234",
+                                    "firstName": "Prashanth",
+                                    "lastName": "Alala",
+                                    "address": "hyderabad",
+                                    "phoneNumber": "9676717149"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/user/{id}": {
+            "get": {
+                "tags": ["Users"],
+                "summary": "GetById - User",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6a554274-4f25-4e73-83d2-a7d4b9b2abfe"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Users"],
+                "summary": "Update - User",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6af1b938-6cae-40a2-ba07-03c97919ebfd"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "userName": "PrashanthAlala"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Users"],
+                "summary": "Delete - User",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "0f530b5a-e972-45bf-b665-89af98578d8e"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": ["Auth"],
+                "summary": "Post - AuthLogin",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "email": "distributor@august.inc",
+                                    "password": "augustDistributor@2024"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "auth/refresh-token": {
+            "post": {
+                "tags": ["Auth"],
+                "summary": "Post-refresh_token",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiakl5Rnpjb3M1RUNlNTA2TjVNQzBkQ3o5eUJ3bURiU3AzQ1NEQ3ZrUDlDRUNjdUxRM0JUVWhnektXNjhWeXhYM0loMnpXOGVJVUxMMDRYYlVrWjJrUzBjUmJVQmhtM3BjY1lCWGd6dHo0WjNyNjFhYWxQSUZqempNMDJ1a0FRY205MXphMCtaL3VVampCSmtucFQzMk11TWEvc1lWWC9Xc01YSXpGWmFSU2tFdW5INENaL2V2MThGVDQxY25QSTcvNEJJZFhpM3JRS05wZFVxazZBUCtLOWoydnpKMElWZWhiODNUOS9ndlBwcW5oU25IK05QZEt6WW5EVWluWnBtMCIsImlhdCI6MTczODIyMzgxMiwiZXhwIjoxNzM4ODI4NjEyfQ.kqg-qhL_NB5PmieNjVO6gAfVxlMU3KntU41SI4IRIbY"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "user/logout": {
+            "post": {
+                "tags": ["Auth"],
+                "summary": "Post - logout",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiakl5Rnpjb3M1RUNlNTA2TjVNQzBkQ3o5eUJ3bURiU3AzQ1NEQ3ZrUDlDRUNjdUxRM0JUVWhnektXNjhWeXhYM0loMnpXOGVJVUxMMDRYYlVrWjJrUzBjUmJVQmhtM3BjY1lCWGd6dHo0WjNyNjFhYWxQSUZqempNMDJ1a0FRY205MXphMCtaL3VVampCSmtucFQzMk11TWEvc1lWWC9Xc01YSXpGWmFSU2tFdW5INENaL2V2MThGVDQxY25QSTcvNEJJZFhpM3JRS05wZFVxazZBUCtLOWoydnpKMElWZWhiODNUOS9ndlBwcW5oU25IK05QZEt6WW5EVWluWnBtMCIsImlhdCI6MTczODIzMjYxNCwiZXhwIjoxNzM4MjM2MjE0fQ.CAoY6gY5L46YIM_vP55zCWHB9znWuTvw6du-bAB3lCQ"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/distributor": {
+            "post": {
+                "tags": ["Distributor"],
+                "summary": "Post - Distributor",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "name": "Prashanthalala",
+                                    "contactInfo": "prashanthalala@gmail.com",
+                                    "gstNumber": "27AABCU9603R1ZM",
+                                    "amaStatus": true,
+                                    "address": "123 Main Street, City, State, ZIP",
+                                    "createdBy": "f9867156-75eb-4a17-9431-1a726f934849"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Distributor"],
+                "summary": "Get - Distributor",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/distributor/{id}": {
+            "get": {
+                "tags": ["Distributor"],
+                "summary": "GetById - Distributor",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6a554274-4f25-4e73-83d2-a7d4b9b2abfe"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Distributor"],
+                "summary": "Update - Distributor",
+                "requestBody": {
+                    "content": {}
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6a554274-4f25-4e73-83d2-a7d4b9b2abfe"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Distributor"],
+                "summary": "Delete - Distributor",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6a554274-4f25-4e73-83d2-a7d4b9b2abfe"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/agreement": {
+            "post": {
+                "tags": ["Agreements"],
+                "summary": "Post - Agreement",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "number": "AGR00001",
+                                    "status": "pending",
+                                    "createdBy": "84e90655-6275-4526-a381-11e57f77e0fc",
+                                    "distributorId": "dc9a7e0c-26b2-4fd9-a9a6-2f506eeff86f"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Agreements"],
+                "summary": "Get - Agreements",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/agreement/{id}": {
+            "get": {
+                "tags": ["Agreements"],
+                "summary": "GetById - Agreement",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6a554274-4f25-4e73-83d2-a7d4b9b2abfe"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Agreements"],
+                "summary": "Update - Agreement",
+                "requestBody": {
+                    "content": {}
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6a554274-4f25-4e73-83d2-a7d4b9b2abfe"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Agreements"],
+                "summary": "Delete - Agreement",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6a554274-4f25-4e73-83d2-a7d4b9b2abfe"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/call-schedule": {
+            "post": {
+                "tags": ["CallSchedule"],
+                "summary": "Post - CallSchedule",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "date": "2025-01-25T10:30:00.000Z",
+                                    "reason": "Follow-up on order status",
+                                    "distributorId": "108641e4-fc88-4763-9138-ef0b8ce59616",
+                                    "createdBy": "84e90655-6275-4526-a381-11e57f77e0fc"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["CallSchedule"],
+                "summary": "Get - CallSchedule",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/call-schedule/{id}": {
+            "get": {
+                "tags": ["CallSchedule"],
+                "summary": "GetById - CallSchedule",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "fa7f5d46-31a8-4140-80df-4397c69757dd"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["CallSchedule"],
+                "summary": "Update - CallSchedule",
+                "requestBody": {
+                    "content": {}
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "fa7f5d46-31a8-4140-80df-4397c69757dd"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["CallSchedule"],
+                "summary": "Delete - CallSchedule",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "fa7f5d46-31a8-4140-80df-4397c69757dd"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/orders": {
+            "post": {
+                "tags": ["Orders"],
+                "summary": "Post - Order",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "status": "pending",
+                                    "distributorId": "dc9a7e0c-26b2-4fd9-a9a6-2f506eeff86f",
+                                    "projectId": "241317fe-45a3-40d7-8821-f65b0d88f699",
+                                    "products": [
+                                        {
+                                            "productId": "2de95aa5-e9c0-454a-8683-2f1a9b293e5c",
+                                            "quantity": 1
+                                        },
+                                        {
+                                            "productId": "8762e0d9-ea77-4484-b608-69632786de4a",
+                                            "quantity": 1
+                                        }
+                                    ],
+                                    "paymentType": "online"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            },
+            "get": {
+                "tags": ["Orders"],
+                "summary": "Get - Orders",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            }
+        },
+        "/orders/{id}": {
+            "get": {
+                "tags": ["Orders"],
+                "summary": "GetById - Order",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "example": "0f98e11e-e678-4b49-b753-f2b100f9b887"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            },
+            "put": {
+                "tags": ["Orders"],
+                "summary": "Update - Order",
+                "requestBody": { "content": {} },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "example": "0f98e11e-e678-4b49-b753-f2b100f9b887"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            },
+            "delete": {
+                "tags": ["Orders"],
+                "summary": "Delete - Order",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "example": "f9f9b7cd-9f5a-4cae-afb3-cf384ec47164"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            }
+        },
+        "/payments": {
+            "post": {
+                "tags": ["Payments"],
+                "summary": "Post - Payment",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "orderId": "8cfdd203-3bcd-4f7c-91a9-87a2a3028ef2",
+                                    "amount": 250.75,
+                                    "date": "2025-01-22T10:30:00.000Z",
+                                    "type": "credit_card",
+                                    "status": "pending",
+                                    "createdBy": "f9867156-75eb-4a17-9431-1a726f934849",
+                                    "distributorId": "e28d1aa8-2b6f-43e6-b5f0-250a20f8b0d7"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            },
+            "get": {
+                "tags": ["Payments"],
+                "summary": "Get - Payments",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            }
+        },
+        "/payments/{id}": {
+            "get": {
+                "tags": ["Payments"],
+                "summary": "GetById - Payment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "example": "0e6d9839-ed9c-4f6f-a13e-58788a94f696"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            },
+            "put": {
+                "tags": ["Payments"],
+                "summary": "Update - Payment",
+                "requestBody": { "content": {} },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "example": "068e9cef-8093-4e8f-a6cd-bc70ef071c30"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            },
+            "delete": {
+                "tags": ["Payments"],
+                "summary": "Delete - Payment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "example": "f9f9b7cd-9f5a-4cae-afb3-cf384ec47164"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": { "application/json": {} }
+                    }
+                },
+                "security": [{ "api_key": [] }]
+            }
+        },
+        "/support": {
+            "post": {
+                "tags": ["Support"],
+                "summary": "Post - Support",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Customer is facing issues with their recent order delivery."
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "pending"
+                                    },
+                                    "orderId": {
+                                        "type": "string",
+                                        "example": "a4a0bfe9-003d-4eef-bf56-49246a49bb1c"
+                                    },
+                                    "createdBy": {
+                                        "type": "string",
+                                        "example": "f9867156-75eb-4a17-9431-1a726f934849"
+                                    },
+                                    "distributorId": {
+                                        "type": "string",
+                                        "example": "108641e4-fc88-4763-9138-ef0b8ce59616"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Support"],
+                "summary": "Get - Support",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/support/{id}": {
+            "get": {
+                "tags": ["Support"],
+                "summary": "GetById - Support",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Support"],
+                "summary": "Update - Support",
+                "requestBody": {
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Support"],
+                "summary": "Delete - Support",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/projects": {
+            "post": {
+                "tags": ["Projects"],
+                "summary": "Post - Projects",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "august store"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Developing a store for devices."
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "in_progress"
+                                    },
+                                    "startDate": {
+                                        "type": "string",
+                                        "example": "2024-01-01 05:28:57.441+00"
+                                    },
+                                    "clientId": {
+                                        "type": "string",
+                                        "example": "f1e069b2-f08b-4766-8d1c-6ecc9bf28108"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Projects"],
+                "summary": "Get - Projects",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/projects/{id}": {
+            "get": {
+                "tags": ["Projects"],
+                "summary": "GetById - Projects",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Projects"],
+                "summary": "Update - Project",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Want to set quality store"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Projects"],
+                "summary": "Delete - Project",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/requests": {
+            "post": {
+                "tags": ["Request"],
+                "summary": "Post - Request",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Request for additional components."
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "example": "pending"
+                                    },
+                                    "termsAcceptedDate": {
+                                        "type": "string",
+                                        "example": "2024-01-20T12:00:00.000Z"
+                                    },
+                                    "isTermsAccepted": {
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "isBOMUploaded": {
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "createdBy": {
+                                        "type": "string",
+                                        "example": "f9867156-75eb-4a17-9431-1a726f934849"
+                                    },
+                                    "distributorId": {
+                                        "type": "string",
+                                        "example": "e28d1aa8-2b6f-43e6-b5f0-250a20f8b0d7"
+                                    },
+                                    "projectId": {
+                                        "type": "string",
+                                        "example": "6f6e85ae-5cf7-484f-aa73-4eaf9e61c179"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Request"],
+                "summary": "Get - Request",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/requests/{id}": {
+            "get": {
+                "tags": ["Request"],
+                "summary": "GetById - Request",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Request"],
+                "summary": "Update - Request",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Updated request details."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Request"],
+                "summary": "Delete - Request",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/documents": {
+            "post": {
+                "tags": ["Documents"],
+                "summary": "Post - Documents",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "document": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "referencedTable": {
+                                        "type": "string",
+                                        "example": "agreement"
+                                    },
+                                    "referenceId": {
+                                        "type": "string",
+                                        "example": "0f530b5a-e972-45bf-b665-89af98578d8e"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "example": "sample docs"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Documents"],
+                "summary": "Get - Documents",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/documents/{id}": {
+            "get": {
+                "tags": ["Documents"],
+                "summary": "GetById - Document",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Documents"],
+                "summary": "Update - Document",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "updated document name"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Documents"],
+                "summary": "Delete - Document",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/authToken": {
+            "get": {
+                "tags": ["AuthToken"],
+                "summary": "Get - AuthToken",
+                "parameters": [
+                    {
+                        "name": "x-auth-token",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiTXBxVXo5bHIwV2loQ1lCUVNYVFYyelpJUXltSGJuNjl4RWxWRDUvUUhweXhwL01zaEFKdzhyRnM1VSszU3pxOEE2eW54bTkwa3JKSEkwZUtWR0o2cll0TVZUalNvS2JsaURFSi80Zjd0YXN6ZVVxYjlnQzg4VmFqdytyZUZDZktVYzN5TUE1dlhBbzYvdmVuQVpHN2tPMUtMV016TGJSc0srVzNqd2ZwWDk4PSIsImlhdCI6MTczNzU1NzYyOCwiZXhwIjoxNzM3NTYxMjI4fQ.BOVB5XifUhTuOrNpcj-OWF-P6r-ngJpq7FbAOWsbZBs"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/authHistroy": {
+            "post": {
+                "tags": ["AuthHistory"],
+                "summary": "Post - AuthHistory",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "userId": "f45dba84-13ee-4fa4-93b0-3eebf5956572",
+                                    "unsuccessfulCount": 3,
+                                    "nextRetryTime": "2025-01-21T12:30:00.000Z",
+                                    "isDelete": false
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "x-auth-token",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiTXBxVXo5bHIwV2loQ1lCUVNYVFYyelpJUXltSGJuNjl4RWxWRDUvUUhweXhwL01zaEFKdzhyRnM1VSszU3pxOEE2eW54bTkwa3JKSEkwZUtWR0o2cll0TVZUalNvS2JsaURFSi80Zjd0YXN6ZVVxYjlnQzg4VmFqdytyZUZDZktVYzN5TUE1dlhBbzYvdmVuQVpHN2tPMUtMV016TGJSc0srVzNqd2ZwWDk4PSIsImlhdCI6MTczNzU1NzYyOCwiZXhwIjoxNzM3NTYxMjI4fQ.BOVB5XifUhTuOrNpcj-OWF-P6r-ngJpq7FbAOWsbZBs"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["AuthHistory"],
+                "summary": "Get - authHistroy",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/apilogs": {
+            "post": {
+                "tags": ["ApiLogs"],
+                "summary": "Post - ApiLogs",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "example": {
+                                    "method": "POST",
+                                    "path": "/api/v1/users",
+                                    "ip": "192.168.1.1",
+                                    "created_by": "8292fc8a-f3bb-4812-833d-200016948498"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["ApiLogs"],
+                "summary": "Get - ApiLogs",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/client": {
+            "post": {
+                "tags": ["Client"],
+                "summary": "Post - Client",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "ABC Enterprises"
+                                    },
+                                    "createdBy": {
+                                        "type": "string",
+                                        "example": "f9867156-75eb-4a17-9431-1a726f934849"
+                                    },
+                                    "distributorId": {
+                                        "type": "string",
+                                        "example": "108641e4-fc88-4763-9138-ef0b8ce59616"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Client"],
+                "summary": "Get - Client",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/client/{id}": {
+            "get": {
+                "tags": ["Client"],
+                "summary": "GetById - Client",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Client"],
+                "summary": "Update - Client",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Updated Client Name"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Client"],
+                "summary": "Delete - Client",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/product": {
+            "post": {
+                "tags": ["Product"],
+                "summary": "Post - Product",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Wireless Mouse"
+                                    },
+                                    "categoryId": {
+                                        "type": "string",
+                                        "example": "83fd0f65-4ba4-491f-b4c3-a4ee4d2c0540"
+                                    },
+                                    "amount": {
+                                        "type": "number",
+                                        "example": 29.99
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "A high-precision wireless mouse with ergonomic design."
+                                    },
+                                    "stock": {
+                                        "type": "integer",
+                                        "example": 100
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Product"],
+                "summary": "Get - Product",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/product/{id}": {
+            "get": {
+                "tags": ["Product"],
+                "summary": "GetById - Product",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Product"],
+                "summary": "Update - Product",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "example": "A good volume for smooth engine"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Product"],
+                "summary": "Delete - Product",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/category": {
+            "post": {
+                "tags": ["Category"],
+                "summary": "Post - Category",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Electronics"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Category for all electronic products and gadgets"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["Category"],
+                "summary": "Get - Category",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/category/{id}": {
+            "get": {
+                "tags": ["Category"],
+                "summary": "GetById - Category",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["Category"],
+                "summary": "Update - Category",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Category for all electronic products and gadgets"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["Category"],
+                "summary": "Delete - Category",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/user-info/{id}": {
+            "get": {
+                "tags": ["UserInfo"],
+                "summary": "GetById - UserInfo",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["UserInfo"],
+                "summary": "Update - UserInfo",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Jane Doe"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "jane.doe@example.com"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/country-currency": {
+            "post": {
+                "tags": ["CountryCurrency"],
+                "summary": "Post - CountryCurrency",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "countryName": {
+                                        "type": "string",
+                                        "example": "Iskanza"
+                                    },
+                                    "isoCode": {
+                                        "type": "string",
+                                        "example": "ISK"
+                                    },
+                                    "currencyCode": {
+                                        "type": "string",
+                                        "example": "ISK"
+                                    },
+                                    "currencyName": {
+                                        "type": "string",
+                                        "example": "Ishjan Ona"
+                                    },
+                                    "currencySymbol": {
+                                        "type": "string",
+                                        "example": "IZ"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["CountryCurrency"],
+                "summary": "Get - CountryCurrency",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/country-currency/{id}": {
+            "get": {
+                "tags": ["CountryCurrency"],
+                "summary": "GetById - CountryCurrency",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["CountryCurrency"],
+                "summary": "Update - CountryCurrency",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "countryName": {
+                                        "type": "string",
+                                        "example": "China China"
+                                    },
+                                    "currencyName": {
+                                        "type": "string",
+                                        "example": "Yuan"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["CountryCurrency"],
+                "summary": "Delete - CountryCurrency",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/product-price": {
+            "post": {
+                "tags": ["ProductPrice"],
+                "summary": "Post - ProductPrice",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "productId": {
+                                        "type": "string",
+                                        "example": "8762e0d9-ea77-4484-b608-69632786de4a"
+                                    },
+                                    "countryCurrencyId": {
+                                        "type": "string",
+                                        "example": "d038e595-c7a4-4189-bb0f-cde1b3550e10"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Premium subscription for 12 months"
+                                    },
+                                    "amount": {
+                                        "type": "number",
+                                        "example": 999.99
+                                    },
+                                    "createdBy": {
+                                        "type": "string",
+                                        "example": "c45bf20e-6267-4d9e-8966-8c1c349d09ab"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": ["ProductPrice"],
+                "summary": "Get - ProductPrice",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/product-price/{id}": {
+            "get": {
+                "tags": ["ProductPrice"],
+                "summary": "GetById - ProductPrice",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": ["ProductPrice"],
+                "summary": "Update - ProductPrice",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "example": "August Premium subscription for 6 months"
+                                    },
+                                    "amount": {
+                                        "type": "number",
+                                        "example": 599.99
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": ["ProductPrice"],
+                "summary": "Delete - ProductPrice",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,156 @@
+{
+    "activeIncidents": [
+        {
+            "incidentId": "INC12345",
+            "status": "Active",
+            "severity": "High",
+            "assignedTeam": "L1 Support",
+            "description": "Server downtime affecting users",
+            "lastUpdated": "2025-03-24T10:15:00Z"
+        },
+        {
+            "incidentId": "INC12346",
+            "status": "Active",
+            "severity": "Medium",
+            "assignedTeam": "L2 Support",
+            "description": "Intermittent network latency",
+            "lastUpdated": "2025-03-24T10:05:00Z"
+        },
+        {
+            "incidentId": "INC12347",
+            "status": "Resolved",
+            "severity": "Low",
+            "assignedTeam": "L1 Support",
+            "description": "Password reset issue",
+            "lastUpdated": "2025-03-23T15:20:00Z"
+        },
+        {
+            "incidentId": "INC12348",
+            "status": "Active",
+            "severity": "High",
+            "assignedTeam": "L2 Support",
+            "description": "API outage",
+            "lastUpdated": "2025-03-24T09:50:00Z"
+        },
+        {
+            "incidentId": "INC12349",
+            "status": "Resolved",
+            "severity": "Medium",
+            "assignedTeam": "L3 Support",
+            "description": "Database connection failure",
+            "lastUpdated": "2025-03-23T14:45:00Z"
+        },
+        {
+            "incidentId": "INC12350",
+            "status": "Active",
+            "severity": "Medium",
+            "assignedTeam": "L1 Support",
+            "description": "Website loading slow",
+            "lastUpdated": "2025-03-24T09:35:00Z"
+        },
+        {
+            "incidentId": "INC12351",
+            "status": "Escalated",
+            "severity": "High",
+            "assignedTeam": "L3 Support",
+            "description": "Data center power issue",
+            "lastUpdated": "2025-03-24T08:50:00Z"
+        },
+        {
+            "incidentId": "INC12352",
+            "status": "Resolved",
+            "severity": "Low",
+            "assignedTeam": "L1 Support",
+            "description": "User login issue",
+            "lastUpdated": "2025-03-23T17:00:00Z"
+        },
+        {
+            "incidentId": "INC12353",
+            "status": "Active",
+            "severity": "High",
+            "assignedTeam": "L2 Support",
+            "description": "Email system outage",
+            "lastUpdated": "2025-03-24T10:00:00Z"
+        },
+        {
+            "incidentId": "INC12354",
+            "status": "Escalated",
+            "severity": "Critical",
+            "assignedTeam": "L3 Support",
+            "description": "Firewall breach detected",
+            "lastUpdated": "2025-03-24T09:40:00Z"
+        }
+    ],
+    "healthMetrics": {
+        "systemStatus": "Healthy",
+        "cpuUsage": "45%",
+        "memoryUsage": "62%",
+        "diskSpace": "70% free"
+    },
+    "alerts": [
+        {
+            "alertId": "ALERT123",
+            "message": "High CPU usage detected",
+            "timestamp": "2025-03-24T09:55:00Z"
+        },
+        {
+            "alertId": "ALERT124",
+            "message": "Low disk space warning",
+            "timestamp": "2025-03-24T09:45:00Z"
+        },
+        {
+            "alertId": "ALERT125",
+            "message": "Network congestion detected",
+            "timestamp": "2025-03-24T09:35:00Z"
+        },
+        {
+            "alertId": "ALERT126",
+            "message": "Database server degraded",
+            "timestamp": "2025-03-24T09:25:00Z"
+        },
+        {
+            "alertId": "ALERT127",
+            "message": "Unusual traffic spike",
+            "timestamp": "2025-03-24T09:15:00Z"
+        },
+        {
+            "alertId": "ALERT128",
+            "message": "API connection failed",
+            "timestamp": "2025-03-24T09:05:00Z"
+        },
+        {
+            "alertId": "ALERT129",
+            "message": "Power fluctuations detected",
+            "timestamp": "2025-03-24T08:55:00Z"
+        },
+        {
+            "alertId": "ALERT130",
+            "message": "Security vulnerability detected",
+            "timestamp": "2025-03-24T08:45:00Z"
+        },
+        {
+            "alertId": "ALERT131",
+            "message": "Service degradation observed",
+            "timestamp": "2025-03-24T08:35:00Z"
+        },
+        {
+            "alertId": "ALERT132",
+            "message": "Memory usage above threshold",
+            "timestamp": "2025-03-24T08:25:00Z"
+        }
+    ],
+    "quickLinks": [
+        {
+            "label": "Incident Management",
+            "url": "/incident-management"
+        },
+        {
+            "label": "Health Checks",
+            "url": "/health-checks"
+        },
+        {
+            "label": "Knowledge Base",
+            "url": "/knowledge-base"
+        }
+    ]
+}

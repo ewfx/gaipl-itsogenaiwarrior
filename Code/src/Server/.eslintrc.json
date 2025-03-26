@@ -1,0 +1,102 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": ["eslint:recommended", "prettier", "plugin:sonarjs/recommended"],
+    "plugins": ["prettier", "sonarjs", "jsdoc", "filename-rules"],
+    "globals": {
+        "APP_DATA": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-console": "error",
+        "no-empty": "error",
+        "no-unused-vars": "off",
+        "prettier/prettier": "error",
+        "class-methods-use-this": "error",
+        "no-param-reassign": "error",
+        "no-async-promise-executor": "error",
+        "max-lines": [
+            "error",
+            {
+                "max": 500
+            }
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 100,
+                "tabWidth": 2,
+                "ignoreComments": true,
+                "ignoreUrls": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true
+            }
+        ],
+        "camelcase": "error",
+        "indent": "error",
+        "jsdoc/check-alignment": "error",
+        "jsdoc/check-indentation": "error",
+        "jsdoc/check-param-names": "error",
+        "jsdoc/check-syntax": "error",
+        "jsdoc/check-tag-names": "error",
+        "jsdoc/check-types": "error",
+        "jsdoc/implements-on-classes": "error",
+        "jsdoc/no-types": "error",
+        "jsdoc/require-description": "error",
+        "jsdoc/require-description-complete-sentence": "error",
+        "jsdoc/require-param": "error",
+        "jsdoc/require-param-description": "error",
+        "jsdoc/require-param-name": "error",
+        "jsdoc/require-param-type": "error",
+        "jsdoc/require-returns": "error",
+        "jsdoc/require-returns-check": "error",
+        "jsdoc/require-returns-description": "error",
+        "jsdoc/require-returns-type": "error",
+        "filename-rules/match": ["error", "camelCase"],
+        "no-shadow": "error",
+        "no-redeclare": "error",
+        "no-use-before-define": [
+            "error",
+            {
+                "functions": true,
+                "classes": true,
+                "variables": true
+            }
+        ],
+        "consistent-return": "error",
+        "prefer-const": [
+            "error",
+            {
+                "destructuring": "all",
+                "ignoreReadBeforeAssign": false
+            }
+        ],
+        "no-var": "error",
+        "no-unused-expressions": "error",
+        "prefer-destructuring": [
+            "error",
+            {
+                "object": true,
+                "array": true
+            },
+            {
+                "enforceForRenamedProperties": false
+            }
+        ],
+        "init-declarations": ["error", "always"],
+        "no-duplicate-imports": "error",
+        "object-shorthand": "error",
+        "no-magic-numbers": [
+            "error",
+            {
+                "ignore": [0, 1, -1],
+                "ignoreArrayIndexes": true
+            }
+        ]
+    }
+}
