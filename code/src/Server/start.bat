@@ -1,0 +1,1 @@
+rmdir /s /q node_modules && npm install && npm run lint:fix && npm start

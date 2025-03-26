@@ -1,0 +1,143 @@
+{
+    "incidents": [
+        {
+            "incidentId": "INC12345",
+            "server":"Database Server 10",
+            "status": "Active",
+            "severity": "High",
+            "assignedTeam": "L1 Support",
+            "description": "Server downtime affecting users",
+            "lastUpdated": "2025-03-24T10:15:00Z",
+            "aiRecommendations": [
+                {
+                    "suggestion": "Run health check for server status.",
+                    "relatedIncidents": [
+                        "INC12343",
+                        "INC12344"
+                    ]
+                },
+                {
+                    "suggestion": "Check recent network issues.",
+                    "relatedKBArticles": [
+                        "KB1234",
+                        "KB5678"
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "RUN_CHECK",
+                    "type": "Run Automation",
+                    "label": "Run Server Health Check",
+                    "status": "Pending"
+                },
+                {
+                    "actionId": "ESCALATE_L2",
+                    "type": "Escalate",
+                    "label": "Escalate to L2 Support",
+                    "status": "Available"
+                }
+            ]
+        },
+        {
+            "incidentId": "INC12346",
+            "server":"APP Server 07",
+            "status": "Resolved",
+            "severity": "Low",
+            "assignedTeam": "L1 Support",
+            "description": "User login issue",
+            "lastUpdated": "2025-03-23T14:45:00Z",
+            "aiRecommendations": [
+                {
+                    "suggestion": "Check credentials database",
+                    "relatedIncidents": [
+                        "INC12342"
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "RUN_CHECK",
+                    "type": "Run Automation",
+                    "label": "Check User Login System",
+                    "status": "Completed"
+                }
+            ]
+        },
+        {
+            "incidentId": "INC12347",
+            "server":"App Server 03",
+            "status": "Active",
+            "severity": "High",
+            "assignedTeam": "L2 Support",
+            "description": "API outage",
+            "lastUpdated": "2025-03-24T10:25:00Z",
+            "aiRecommendations": [
+                {
+                    "suggestion": "Check server logs for API failures",
+                    "relatedIncidents": [
+                        "INC12345"
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "RUN_CHECK",
+                    "type": "Run Automation",
+                    "label": "Run API Health Check",
+                    "status": "Available"
+                }
+            ]
+        },
+        {
+            "incidentId": "INC12348",
+            "server":"App Server 07",
+            "status": "Escalated",
+            "severity": "Medium",
+            "assignedTeam": "L3 Support",
+            "description": "Database connection failure",
+            "lastUpdated": "2025-03-23T14:10:00Z",
+            "aiRecommendations": [
+                {
+                    "suggestion": "Restart database server",
+                    "relatedIncidents": [
+                        "INC12344"
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "ESCALATE_L3",
+                    "type": "Escalate",
+                    "label": "Escalate to L3 Support",
+                    "status": "Completed"
+                }
+            ]
+        },
+        {
+            "incidentId": "INC12349",
+            "server":"UI Server 07",
+            "status": "Resolved",
+            "severity": "Low",
+            "assignedTeam": "L1 Support",
+            "description": "Password reset issue",
+            "lastUpdated": "2025-03-23T13:50:00Z",
+            "aiRecommendations": [
+                {
+                    "suggestion": "Verify email configuration",
+                    "relatedIncidents": [
+                        "INC12340"
+                    ]
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "RUN_CHECK",
+                    "type": "Run Automation",
+                    "label": "Reset Password Automation",
+                    "status": "Completed"
+                }
+            ]
+        }
+    ]
+}

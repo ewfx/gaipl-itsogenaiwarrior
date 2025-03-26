@@ -1,0 +1,40 @@
+{
+    "recommendations": [
+        {
+            "incidentId": "INC12345",
+            "aiRecommendation": "Run health check for server status.",
+            "relatedIncidents": [
+                "INC12343",
+                "INC12344"
+            ]
+        },
+        {
+            "incidentId": "INC12346",
+            "aiRecommendation": "Check credentials database.",
+            "relatedIncidents": [
+                "INC12342"
+            ]
+        },
+        {
+            "incidentId": "INC12347",
+            "aiRecommendation": "Check server logs for API failures.",
+            "relatedIncidents": [
+                "INC12345"
+            ]
+        },
+        {
+            "incidentId": "INC12348",
+            "aiRecommendation": "Restart database server.",
+            "relatedIncidents": [
+                "INC12344"
+            ]
+        },
+        {
+            "incidentId": "INC12349",
+            "aiRecommendation": "Verify email configuration.",
+            "relatedIncidents": [
+                "INC12340"
+            ]
+        }
+    ]
+}
